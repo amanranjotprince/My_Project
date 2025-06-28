@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,21 +11,23 @@ html {
 }
 
 body {
-    background-color: #f8f9fa;
+    background-color: #e6f0fa; /* Softer blue-gray background */
 }
 
+/* Typography */
 .h-primary {
-    font-size: 2.5rem;
-    padding: 1rem;
-    color: #0d2abe;
-    font-weight: 600;
+    font-size: 2.75rem;
+    padding: 1.5rem 2rem;
+    color: #0a1e8c; /* Darker blue for better contrast */
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .h-secondary {
-    font-size: 1.5rem;
-    padding: 0.75rem;
-    color: #0d2abe;
-    font-weight: 500;
+    font-size: 1.75rem;
+    padding: 1rem 1.5rem;
+    color: #0a1e8c;
+    font-weight: 600;
 }
 
 .center {
@@ -34,47 +36,52 @@ body {
 
 /* Navbar */
 #navbar {
-    background: linear-gradient(90deg, #0d2abe, #1c31c3);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #0a1e8c, #1e3ab5); /* Refined gradient */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 1rem 2rem;
 }
 
 #logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
 }
 
 .logo-img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    border: 2px solid #ffffff;
 }
 
 .brand-text {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 700;
 }
 
 .navbar-nav .nav-link {
-    color: white !important;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    color: #ffffff !important;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    background-color: white;
-    color: #0d2abe !important;
-    border-radius: 10px;
+    background-color: #ffffff;
+    color: #0a1e8c !important;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Home Section */
 #home {
     position: relative;
-    min-height: 600px;
+    min-height: 650px;
     background: url('https://t3.ftcdn.net/jpg/00/01/47/28/360_F_1472821_kMjcU0El8NkcU0k7zNtlVTU0Fl8W2l.jpg') no-repeat center center/cover;
-    color: white;
+    color: #ffffff;
+    padding: 2rem 3rem;
 }
 
 #home::before {
@@ -84,206 +91,270 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
     z-index: 1;
 }
 
 .home-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 2rem;
+    max-width: 900px;
+    padding: 2rem 3rem;
 }
 
 #home h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 #home p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
 }
 
 .button {
-    padding: 0.75rem 2rem;
-    background: linear-gradient(45deg, #0d2abe, #1c31c3);
-    color: white;
+    padding: 1rem 3rem;
+    background: linear-gradient(45deg, #0a1e8c, #3b5cff);
+    color: #ffffff;
     border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
+    border-radius: 30px;
+    font-size: 1.3rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-    background: linear-gradient(45deg, #1c31c3, #0d2abe);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #3b5cff, #0a1e8c);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Services Section */
 #services-container {
-    background-color: #fff;
+    background-color: #ffffff;
+    padding: 3rem 2rem;
 }
 
 #services .box {
-    background-color: #cac9e7;
-    border-radius: 20px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #d9e2ff, #b8c7ff); /* Softer gradient */
+    border-radius: 25px;
+    padding: 2rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 #services .box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-12px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 #services .box img {
-    height: 150px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+}
+
+#services .box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
 }
 
 /* Location Section */
+#location-section {
+    padding: 3rem 2rem;
+}
+
 #location-section .carousel-item {
-    padding: 1rem;
+    padding: 1.5rem 2rem;
 }
 
 .card {
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
 .card-img-top {
-    height: 200px;
+    height: 220px;
     object-fit: cover;
 }
 
 .card-title {
-    font-size: 1.25rem;
-    color: #0d2abe;
+    font-size: 1.4rem;
+    color: #0a1e8c;
+    padding: 1rem;
 }
 
 /* Place Section */
 #place-section {
-    background-color: #f8f9fa;
+    background-color: #e6f0fa;
+    padding: 3rem 2rem;
 }
 
 #place-box {
-    background-color: #cac9e7;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #d9e2ff, #b8c7ff);
+    border-radius: 25px;
+    padding: 2.5rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .month li {
-    flex: 1 1 30%;
-    margin: 0.5rem;
+    flex: 1 1 25%;
+    margin: 0.75rem;
 }
 
 .month li a {
     display: block;
-    padding: 0.75rem;
-    background-color: #fff;
-    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    border-radius: 15px;
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .month li a:hover {
-    background-color: #0d2abe;
-    color: white;
+    background: linear-gradient(45deg, #0a1e8c, #3b5cff);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .month li a span {
-    color: #1c31c3;
+    color: #1e3ab5;
     font-weight: 600;
 }
 
 /* Footer */
 .footer-section {
-    background: linear-gradient(90deg, #24262b, #1c1e22);
-    color: white;
+    background: linear-gradient(90deg, #1a1c20, #2c2e33);
+    color: #ffffff;
+    padding: 3rem 2rem;
 }
 
 .rows {
     justify-content: space-between;
+    padding: 1.5rem 2rem;
+}
+
+.column {
+    padding: 1.5rem 2rem;
 }
 
 .column h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .column h4::before {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 0;
-    width: 50px;
-    height: 2px;
-    background-color: #0d2abe;
+    width: 60px;
+    height: 3px;
+    background-color: #0a1e8c;
 }
 
 .column ul li a {
-    color: #bbbbbb;
+    color: #c2c7d6;
     text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    display: block;
     transition: all 0.3s ease;
 }
 
 .column ul li a:hover {
-    color: white;
-    padding-left: 0.5rem;
+    color: #ffffff;
+    padding-left: 0.75rem;
 }
 
 .social a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    color: white;
-    margin-right: 0.5rem;
-    transition: all 0.3s ease;
+    color: #ffffff;
+    margin-right: 0.75rem;
+    transition: all 0.4s ease;
 }
 
 .social a:hover {
-    background-color: white;
-    color: #24262b;
+    background-color: #ffffff;
+    color: #0a1e8c;
 }
 
 .footer-section p {
-    color: #bbbbbb;
+    color: #c2c7d6;
+    font-size: 1rem;
+    padding: 1rem;
 }
 
 .footer-section p:hover {
-    color: white;
+    color: #ffffff;
 }
 
-/* Media Queries */
-@media (max-width: 992px) {
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .h-primary {
+        font-size: 2.25rem;
+        padding: 1.25rem 1.5rem;
+    }
+
     #home h1 {
-        font-size: 2.5rem;
+        font-size: 3.25rem;
     }
 
     #home p {
-        font-size: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .month li {
+        flex: 1 1 33%;
+    }
+}
+
+@media (max-width: 992px) {
+    #home {
+        min-height: 500px;
+        padding: 1.5rem 2rem;
+    }
+
+    #home h1 {
+        font-size: 2.75rem;
+    }
+
+    #home p {
+        font-size: 1.1rem;
+    }
+
+    .button {
+        font-size: 1.1rem;
+        padding: 0.75rem 2rem;
+    }
+
+    #services .box img {
+        height: 140px;
     }
 
     .month li {
@@ -292,12 +363,26 @@ body {
 }
 
 @media (max-width: 768px) {
-    #navbar .navbar-nav {
-        text-align: center;
+    #navbar {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    #home h1 {
+        font-size: 2.25rem;
     }
 
     #services .box {
+        padding: 1.5rem;
         margin-bottom: 1.5rem;
+    }
+
+    .card-img-top {
+        height: 180px;
     }
 
     .month li {
@@ -307,6 +392,7 @@ body {
     .column {
         flex: 1 1 100%;
         text-align: center;
+        padding: 1rem;
     }
 
     .social {
@@ -317,18 +403,49 @@ body {
 @media (max-width: 576px) {
     #home {
         min-height: 400px;
+        padding: 1rem 1.5rem;
     }
 
     #home h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    #home p {
+        font-size: 1rem;
     }
 
     .button {
         font-size: 1rem;
-        padding: 0.5rem 1.5rem;
+        padding: 0.6rem 1.75rem;
+    }
+
+    .h-primary {
+        font-size: 1.75rem;
+        padding: 1rem;
+    }
+
+    .h-secondary {
+        font-size: 1.25rem;
+        padding: 0.75rem;
+    }
+
+    #services-container, #location-section, #place-section {
+        padding: 1.5rem 1rem;
+    }
+
+    #services .box img {
+        height: 120px;
     }
 
     .card-img-top {
         height: 150px;
+    }
+
+    #place-box {
+        padding: 1.5rem;
+    }
+
+    .footer-section {
+        padding: 1.5rem 1rem;
     }
 }
