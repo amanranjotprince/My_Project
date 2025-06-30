@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Travel Packages</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .h-primary {
+            font-size: 2.5rem;
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        .h-secondary {
+            font-size: 1.5rem;
+            padding: 0.75rem;
+            font-weight: 400;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* Navbar */
+        #navbar {
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1a3c6d;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        #navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        #navbar ul li {
+            margin: 0 1rem;
+        }
+
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #navbar ul li a:hover {
+            background-color: #ffffff;
+            color: #1a3c6d;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .tour {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VFJBVkVMJTIwQUdFVHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover;
+        }
+
+        .tour::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .tour-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 800px;
+        }
+
+        .tour #heading {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .tour #para {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        /* Form */
+        #traveling {
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        form input[type="text"] {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        #button {
+            padding: 0.75rem 1.5rem;
+            background-color: #1a3c6d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #button:hover {
+            background-color: #ffffff;
+            color: #1a3c6d;
+            border: 1px solid #1a3c6d;
+        }
+
+        /* Footer */
+        .footer-section {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        .rows {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .column {
+            padding: 1rem;
+        }
+
+        .column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .column h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            background-color: #1a3c6d;
+            height: 2px;
+            width: 40px;
+        }
+
+        .column ul li {
+            list-style: none;
+            margin-bottom: 0.75rem;
+        }
+
+        .column ul li a {
+            color: #bbbbbb;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .column ul li a:hover {
+            color: #ffffff;
+            padding-left: 0.5rem;
+        }
+
+        .column .social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 0.5rem 0.5rem 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .column .social a:hover {
+            background-color: #1a3c6d;
+            color: #ffffff;
+        }
+
+        .column p {
+            color: #bbbbbb;
+            font-size: 0.9rem;
+        }
+
+        .column p:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            #navbar ul.active {
+                display: flex;
+            }
+
+            #navbar ul li {
+                margin: 0.5rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .tour #heading {
+                font-size: 2rem;
+            }
+
+            .tour #para {
+                font-size: 1rem;
+            }
+
+            form {
+                flex-direction: column;
+            }
+
+            form input[type="text"] {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://thumbs.dreamstime.com/b/logo-travel-agency-airplane-sky-blue-color-modern-illustration-logo-travel-agency-airplane-sky-blue-315822425.jpg"
+                alt="logo">
+            <i class="fas fa-bars menu-toggle"></i>
+        </div>
+        <ul>
+            <li class="item"><a href="PROJECT.html">Home</a></li>
+            <li class="item"><a href="travelpakages.html">Travel Packages</a></li>
+            <li class="item"><a href="location.html">Location</a></li>
+            <li class="item"><a href="LetsGO.html">Top Attraction</a></li>
+            <li class="item"><a href="signIN.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Form Section -->
+    <section id="traveling">
+        <div id="form">
+            <form>
+                <label for="tour">
+                    <h3>Tour Packages</h3>
+                </label>
+                <input type="text" name="tour" placeholder="Eg. Dubai, Canada, etc.">
+                <input type="submit" id="button" value="Submit">
+            </form>
+        </div>
+    </section>
+
+    <!-- Tour Section -->
+    <section class="tour">
+        <div class="tour-content">
+            <h2 id="heading">TOUR TRAVELLING...</h2>
+            <p id="para">Traveling lets you break free from the monotonous routine of life and relax your mind, body,
+                and soul. And none can be a better companion while traveling than tour packages customized to meet all
+                your needs. Travel Packages allow you to explore the beauty of your dream destination in a well-planned
+                and hassle-free manner. When you book a Tour Package from us, you can rest assured about your
+                accommodation, transportation, sightseeing, and other planning and arrangements.</p>
+            <p id="para">Whether you are planning a holiday in India or an international tour, booking Holiday Packages
+                from this travel portal is the most beautiful way to explore your holiday destination. You can find tour
+                packages for India to discover the treasure chest of beauty that our country hides or go for
+                international holiday packages to fly to a foreign land and get drowned in its amazing landscape. With a
+                well-organized tour package like ours, your travel would become a cherished memory.</p>
+            <p id="para">Those planning for an excursion in India can book Tour and Travel Packages as per their desired
+                location, theme, or type. From the lush green forests, snow-capped mountains, and crystal blue seas to
+                historical monuments, colorful cultures, and religious sites, India has something for everyone. For
+                romantic getaways, they can book honeymoon or romantic travel packages for destinations like Manali,
+                Ooty, and Kashmir. Adventure enthusiasts can look for adventure tour packages for Rishikesh, Auli,
+                McLeodGanj, Leh Ladakh, Goa, etc. The beach lovers can go for beach tour packages and choose
+                destinations like Andaman & Nicobar Islands, Goa, Kerala, etc.</p>
+            <p id="para">One can also go abroad by booking the best international holiday packages from this travel
+                portal. Here they can find tour packages for top destinations like Europe, Maldives, Bali, Thailand,
+                Singapore, Sri Lanka, Malaysia, Dubai, etc. You can enjoy the spectacular beauty of these foreign lands
+                while the Travel Package providers take care of all your needs like accommodation, travel, sightseeing,
+                etc., in your dream country.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer">
+            <div class="rows">
+                <div class="column">
+                    <h4>About the Site</h4>
+                    <ul>
+                        <li><a href="travelpakages.html">Travel Packages</a></li>
+                        <li><a href="location.html">Locations</a></li>
+                        <li><a href="LetsGO.html">Top Attractions</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="signUP.html">Contact Us</a></li>
+                        <li><a href="signIN.html">Sign in</a></li>
+                        <li><a href="PROJECT.html">Log Out</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Follow Us</h4>
+                    <ul class="social">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Designed by</h4>
+                    <p>Amandeep Kaur (2203395)</p>
+                    <p>Aashima (2203398)</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-section">
+            <p class="center">@copyright All Rights Reserved!!! www.PROJECT.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('#navbar ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
